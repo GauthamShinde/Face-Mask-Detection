@@ -8,7 +8,7 @@ from tensorflow.keras.models import load_model
 model = load_model("model.h5")
 
 # MQTT broker details
-mqtt_broker = "broker.emqx.io"
+mqtt_broker ="10.21.70.16"
 mqtt_port = 1883
 mqtt_topic = "mask_alert"
 
@@ -69,10 +69,8 @@ while True:
     cv2.imshow('Mask Detection', frame)
 
     # Exit the loop when 'q' is pressed
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    if cv2.waitKey(1000)& 0xFF == ord('q'):
         break
-
-        m
 
 # Release the video capture and close the window
 video_capture.release()
